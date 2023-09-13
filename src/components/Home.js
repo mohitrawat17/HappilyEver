@@ -1,19 +1,12 @@
-import React from "react";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+
+import { Link } from "react-router-dom";
+import Header from './Header'
 
 const Home = () => {
     return (
         <div className=" w-full h-full  flex flex-col ">
             <div className="w-full text-lg font-semibold bg-blue-300">
 
-
-                <div className=" flex justify-between px-4 items-center shadow-xl bg-white py-2">
-                    <img
-                        className="cursor-pointer"
-                        src="https://www.happilyever.co/static/media/newLogo.aa017d5297ade31296050058d61d207d.svg"
-                    />
-                    <ExitToAppIcon className="cursor-pointer" />
-                </div>
 
                 <div className=" flex justify-between mx-3 items-center my-4">
                     <div>
@@ -103,9 +96,9 @@ const Home = () => {
 
             {/* ----- */}
 
-<div className=" text-4xl bg-blue-300 px-[10px] shadow-lg shadow-gray-500 cursor-pointer rounded-full pb-1 fixed left-3/4 top-3/4 mt-24 ml-56">
+<Link to='bot' className=" text-4xl bg-blue-300 px-[10px] shadow-lg shadow-gray-500 cursor-pointer rounded-full pb-1 fixed left-3/4 top-3/4 mt-24 ml-56">
     +
-</div>
+</Link>
 
         </div>
     );

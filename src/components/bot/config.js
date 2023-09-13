@@ -4,6 +4,7 @@ import bot from '../../images/bot.png'
 import user from '../../images/user.png'
 
 
+
 const config = {
   initialMessages: [createChatBotMessage(`Do you want to schedule meeting ?`)],
   botName:"HappilyEver Bot",

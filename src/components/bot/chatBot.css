@@ -1,0 +1,31 @@
+.react-chatbot-kit-chat-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+  .react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+    display: none;
+  }
+ 
+
+
+.react-chatbot-kit-chat-inner-container {
+height: 80%;
+
+}
+
+
+
+
+.react-chatbot-kit-chat-bot-message {
+margin-left: 0;
+}
+
+
+.react-chatbot-kit-chat-input{
+    outline: none;
+}
