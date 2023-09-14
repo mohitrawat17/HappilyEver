@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  
+   const navigate=useNavigate();
+
+
   const handleSession = () => {
 
     const botMessage = createChatBotMessage('Pick a slot !',{
@@ -44,7 +47,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
-    
+
+    setTimeout(() => {
+      navigate('/summary')
+    }, 5000);
   }
 
 

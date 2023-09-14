@@ -4,6 +4,7 @@ import Chatbot from 'react-chatbot-kit'
 import 'react-chatbot-kit/build/main.css'
 import Bot from "./components/Bot";
 import Body from "./components/Body";
+import Summary from "./components/Summary";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
         {
           path:'/bot',
           element:<Bot/>
+        },
+        {
+          path:'/summary',
+          element:<Summary/>
         }
       ]
     },
