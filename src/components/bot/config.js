@@ -2,11 +2,16 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 import Avatar from '@mui/material/Avatar';
 import bot from '../../images/bot.png'
 import user from '../../images/user.png'
+import Options from './Options';
+import SessionType from './SessionType';
 
 
 
 const config = {
-  initialMessages: [createChatBotMessage(`Do you want to schedule meeting ?`)],
+  initialMessages: [createChatBotMessage(`Hello, Welcome to student info system!`,{
+     widget:'options'
+  }
+  )],
   botName:"HappilyEver Bot",
   customComponents: {
     botAvatar: (props) =>  <Avatar
@@ -21,6 +26,16 @@ const config = {
    src={user}
    sx={{ width: 35, height: 35}}/>,
  },
+ widgets:[
+  {
+    widgetName: 'options',
+    widgetFunc: (props) => <Options {...props} />,
+  },
+  {
+    widgetName: 'sessionType',
+    widgetFunc: (props) => <SessionType {...props} />,
+  },
+ ]
 };
 
 export default config;

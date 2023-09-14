@@ -2,21 +2,27 @@ import React from 'react';
 
 const Messageparser = ({ children, actions }) => {
 
-  const parse = (message) => {
-
-    //message = data we will send
-    // console.log(message);
-    if (message.includes('yes')) {
-      actions.handleSession();
+  const parseName = (name) => {
+    //name = data we will send
+    if (name==parseInt(name)) {
+      //age
+      actions.handleFinal();
     }
+    else{
+      //name
+      actions.handleAge();
+    }
+    
   };
 
+ 
+ 
   return (
-    <div>
+    <div> 
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
-          parse: parse,
-          actions: {},
+          parse: parseName,
+          actions,
         });
       })}
     </div>

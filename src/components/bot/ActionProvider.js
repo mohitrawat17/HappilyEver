@@ -3,13 +3,51 @@ import React from 'react';
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   
   const handleSession = () => {
-    const botMessage = createChatBotMessage('How do you want your session ?');
+
+    const botMessage = createChatBotMessage('Pick a slot !',{
+      widget:"sessionType"
+    });
 
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
-  };
+  }
+
+
+  const handleSlot = () => {
+
+    const botMessage = createChatBotMessage('Enter your name');
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  }
+
+  const handleAge = () => {
+
+    const botMessage = createChatBotMessage('Enter your age');
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  }
+
+
+  const handleFinal = () => {
+
+    const botMessage = createChatBotMessage('Thank you');
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+    
+  }
+
+
   
   return (
     <div>
@@ -17,6 +55,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return React.cloneElement(child, {
           actions: {
                handleSession,
+               handleSlot,
+               handleAge,
+               handleFinal
           },
         });
       })}
