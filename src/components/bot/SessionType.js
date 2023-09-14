@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addSlot, addTime } from "../../redux/slotSlice";
 
 const SessionType = (props) => {
+  const dispatch=useDispatch();
+
   const [flag, setFlag] = useState(false)
   const[time,setTime]=useState(true)
 
@@ -27,19 +31,20 @@ const SessionType = (props) => {
   ]
 
 
-  const handleSlots=()=>{
+  const handleSlots=(timeSlot)=>{
     props.actions.handleSlot();
     setFlag(false)
     setTime(false)
+    dispatch(addTime(timeSlot))
   }
 
-  const handler=()=>{
-    
+  const handler=(day)=>{
+    dispatch(addSlot(day))
      setFlag(true)
   }
 
   const buttonsMarkup = sessionType.map((option) => (
-    <button key={option.id} onClick={handler} className="m-2 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
+    <button key={option.id} onClick={()=>handler(option.text)} className="m-2 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
       {option.text}
     </button>
   ));
@@ -52,7 +57,7 @@ const SessionType = (props) => {
       {flag && <div>
          <h3>MORNING</h3>
         {morning.map((val) => (
-          <button key={val.id} onClick={handleSlots} className="m-2 w-24 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
+          <button key={val.id} onClick={()=>handleSlots(val.slot)} className="m-2 w-24 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
             {val.slot}
           </button>
         ))}
@@ -62,7 +67,7 @@ const SessionType = (props) => {
       {flag && <div>
         <h3>NOON</h3>
         {noon.map((val) => (
-          <button key={val.id} onClick={handleSlots} className="m-2 w-24 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
+          <button key={val.id} onClick={()=>handleSlots(val.slot)} className="m-2 w-24 rounded-lg px-2 py-1 border border-blue-400 text-blue-400 text-center">
             {val.slot}
           </button>
         ))}
