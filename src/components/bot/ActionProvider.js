@@ -5,6 +5,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
    const navigate=useNavigate();
 
 
+
   const handleSession = () => {
 
     const botMessage = createChatBotMessage('Pick a slot !',{
@@ -41,7 +42,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleFinal = () => {
 
-    const botMessage = createChatBotMessage('Thank you');
+    const botMessage = createChatBotMessage(`Thank you, redirecting in 5 seconds.`);
 
     setState((prev) => ({
       ...prev,

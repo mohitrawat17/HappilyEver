@@ -8,7 +8,7 @@ import './bot/chatBot.css'
 
 const Bot = () => {
     return (
-        <div className=''>
+        <div className='h-full'>
           <Chatbot 
           
             config={config}

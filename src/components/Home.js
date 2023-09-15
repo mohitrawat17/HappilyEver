@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Sessions from './Sessions';
 
@@ -44,12 +44,19 @@ const Home = () => {
 
             {
                 upcoming ?
-                    <div className="flex gap-7 justify-center flex-wrap">
+                    <div className="flex items-center flex-col gap-7 justify-center flex-wrap">
 
 
                         {
                             userName.length > 0 ?
+                            <>
                                 <Sessions name={userName[userName.length - 1]} age={userAge[userAge.length - 1]} day={day[day.length - 1]} time={time[time.length - 1]} />
+                                <div className='flex px-3 rounded '>
+                                    <Link to='bot' className=" text-xl bg-blue-300 px-[10px] shadow-lg shadow-gray-500 cursor-pointer rounded-lg py-1">
+                                        Enroll More
+                                    </Link>
+                                </div>
+                                </>
                                 :
                                 <div className=' px-3 flex flex-col items-center h-60 rounded justify-center'>
                                     <div className='text-xl mb-4'>Enter into Student Info System</div>
