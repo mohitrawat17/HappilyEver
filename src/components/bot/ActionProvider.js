@@ -1,31 +1,42 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { createClientMessage } from 'react-chatbot-kit';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
    const navigate=useNavigate();
-
-
+   const day = useSelector(store => store.slot.day);
+   const time = useSelector(store => store.slot.time);
 
   const handleSession = () => {
+
+  
+
+    const clientMessage = createClientMessage('Got it !');
+
 
     const botMessage = createChatBotMessage('Pick a slot !',{
       widget:"sessionType"
     });
 
+    
+
     setState((prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage],
+      messages: [...prev.messages,clientMessage, botMessage],
     }));
   }
 
 
   const handleSlot = () => {
 
+
+    const clientMessage =createClientMessage(`${day[day.length - 1]} ${time[time.length-1]}`);
     const botMessage = createChatBotMessage('Enter your name');
 
     setState((prev) => ({
       ...prev,
-      messages: [...prev.messages, botMessage],
+      messages: [...prev.messages, clientMessage,botMessage],
     }));
   }
 

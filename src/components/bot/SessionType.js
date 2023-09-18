@@ -32,10 +32,11 @@ const SessionType = (props) => {
 
 
   const handleSlots=(timeSlot)=>{
-    props.actions.handleSlot();
+    
     setFlag(false)
     setTime(false)
     dispatch(addTime(timeSlot))
+    props.actions.handleSlot();
   }
 
   const handler=(day)=>{

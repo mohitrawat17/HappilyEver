@@ -10,7 +10,6 @@ const Home = () => {
     const time = useSelector(store => store.slot.time)
 
 
-
     const [upcoming, setUpcoming] = useState(true);
     return (
         <div className=" w-full h-full  flex flex-col ">

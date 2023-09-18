@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {addName,addAge } from '../../redux/botSlice';
 import { useDispatch } from 'react-redux';
 

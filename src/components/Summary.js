@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 const Summary = () => {
   const userName=useSelector(store=>store.bot.names);
   const userAge=useSelector(store=>store.bot.ages);
-  const day=useSelector(store=>store.slot.day);
-  const time=useSelector(store=>store.slot.time)
 
   return (
     <div className='sha mt-64  flex flex-col justify-center items-center'>
